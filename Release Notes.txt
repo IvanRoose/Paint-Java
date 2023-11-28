@@ -25,3 +25,5 @@ Features:
 - Log
 Github:
 https://github.com/IvanRoose/Paint-Java
+Paint Walkthrough Video:
+https://youtu.be/wTRdiLP5R4Q
