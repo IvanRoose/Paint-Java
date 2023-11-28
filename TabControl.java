@@ -10,16 +10,11 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.scene.transform.Rotate;
 import javafx.scene.transform.Scale;
-import org.w3c.dom.Text;
 
 import java.util.Stack;
 
 public class TabControl extends Controller {
-    private ImageView selectedImageView;
-    private AnchorPane selectedAnchorPane;
     private Canvas myCanvas;
-
-
 
     public TabControl(){
     }

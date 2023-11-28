@@ -1,8 +1,5 @@
 package com.example.cs250;
 
-import com.example.cs250.Controller;
-import com.example.cs250.EditCanvas;
-import com.example.cs250.TabControl;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.ColorPicker;

@@ -11,7 +11,7 @@ import javafx.scene.shape.Rectangle;
 
 import java.util.Stack;
 
-public class RectangleDraw extends EditCanvas{
+public class RectangleDraw extends Controller{
     private Rectangle currentRectangle;
 
     public RectangleDraw(){

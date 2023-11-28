@@ -27,13 +27,6 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 
-/**TODO
-
- * notifications (as in in the corner of window, from the OS); for autosave - trigger or on off.
-
- * Also: Threading is now expected.  Specifically, you need to have threaded logging.  For logging, you're "tracking" what the user does:
- */
-
 public class Controller {
     @FXML
     private MenuItem timerOn;
@@ -475,10 +468,5 @@ public class Controller {
                 .text("Image Saved.")
                 .darkStyle()
                 .show();
-    }
-
-        public void checkSave(){
-        TabControl checkSave = new TabControl(tabPane, tabPane.getSelectionModel(), null, anchorid, null, null, null, null);
-        checkSave.checkSave();
     }
 }

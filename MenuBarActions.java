@@ -1,6 +1,5 @@
 package com.example.cs250;
 
-import javafx.fxml.FXMLLoader;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.*;
@@ -26,14 +25,6 @@ public class MenuBarActions extends Controller{
         this.myCan = canvas;
         this.anchorid = anchorPane;
     }
-    //resize method
-    public void resize(File file, Canvas myCanvas){
-        Image userImage = new Image(file.getPath());
-        //resizing canvas
-        myCanvas.setHeight(userImage.getHeight());
-        myCanvas.setWidth(userImage.getWidth());
-
-    }
     //open method
     public void open(){
         //Open the file explorer and choose a file
@@ -47,9 +38,6 @@ public class MenuBarActions extends Controller{
         if (file != null){
             //make an image and get the path
             Image userImage = new Image(file.getPath());
-
-            //resizes everything
-            //resize(file, myCan);
 
             //puts the  image in the canvas
             GraphicsContext gc = myCan.getGraphicsContext2D();
