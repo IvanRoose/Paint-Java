@@ -1,0 +1,27 @@
+Release Notes:
+Paint
+Ivan Ruiz
+11/27/2023
+
+Features:
+- Can open/save/save as files  (jpg, png, bmp)
+- Draw lines
+- Draw shapes
+- Resize images
+- Color chooser
+- Help menu
+- Line/shape size changer
+- Tabs
+- Resizable canvas
+- Clear canvas
+- Copy/paste
+- Eraser
+- Movable images
+- Text
+- Timers
+- Notifications
+- Tool tips
+- Flipping/rotating
+- Log
+Github:
+https://github.com/IvanRoose/Paint-Java
