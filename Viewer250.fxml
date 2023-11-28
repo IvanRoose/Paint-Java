@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.Tooltip?>
+<AnchorPane fx:id="anchorid" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="699.0" prefWidth="1121.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cs250.Controller" stylesheets="@styles.css">
+    <children>
+          <Canvas fx:id="myCanvas" height="200.0" width="200.0" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="100.0" />
+        <MenuBar layoutY="1.0" prefHeight="26.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem fx:id="menuItemOpen" mnemonicParsing="false" onAction="#OpenMenuAction" text="Open" />
+                        <MenuItem fx:id="menuItemSave" mnemonicParsing="false" onAction="#SaveMenuAction" text="Save" />
+                        <MenuItem fx:id="menuItemSaveAs" mnemonicParsing="false" onAction="#SaveAsMenuAction" text="Save as" />
+                    </items>
+                </Menu>
+            <Menu mnemonicParsing="false" text="Options">
+               <items>
+                  <Menu mnemonicParsing="false" text="Auto Save Display">
+                    <items>
+                      <MenuItem fx:id="timerOn" mnemonicParsing="false" onAction="#TimerOn" text="Show" />
+                        <MenuItem fx:id="timerOff" mnemonicParsing="false" onAction="#TimerOff" text="Hide" />
+                    </items>
+                  </Menu>
+               </items></Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Action 1" />
+                  <MenuItem mnemonicParsing="false" text="Action 1" />
+               </items>
+            </Menu>
+            </menus>
+        </MenuBar>
+        <Accordion layoutX="493.0" layoutY="25.0" prefHeight="375.0" prefWidth="108.0" AnchorPane.bottomAnchor="-0.19999999999998863" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="25.0">
+            <panes>
+            <TitledPane animated="false" text="Canvas Control">
+               <content>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label text="Rotation Degree">
+                           <VBox.margin>
+                              <Insets left="3.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextField fx:id="rotDeg" />
+                        <ToggleButton fx:id="rotBtn" mnemonicParsing="false" onAction="#SelectRotate" prefHeight="26.0" prefWidth="72.0" text="Paste Rot.">
+                           <tooltip>
+                              <Tooltip text="Select and Rotate"/>
+                           </tooltip>
+                           <VBox.margin>
+                              <Insets left="8.0" top="10.0" />
+                           </VBox.margin>
+                        </ToggleButton>
+                        <Button mnemonicParsing="false" onAction="#VerticalFlip" prefHeight="26.0" prefWidth="70.0" text="Vert. Flip">
+                           <tooltip>
+                              <Tooltip text="Flips Canvas"/>
+                           </tooltip>
+                           <VBox.margin>
+                              <Insets left="10.0" top="20.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#HorizontalFlip" prefHeight="26.0" prefWidth="70.0" text="Horz. Flip">
+                           <tooltip>
+                              <Tooltip text="Flips Canvas"/>
+                           </tooltip>
+                           <VBox.margin>
+                              <Insets left="10.0" top="20.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#RotateCanvas" prefHeight="26.0" prefWidth="70.0" text="Rotate">
+                           <tooltip>
+                              <Tooltip text="Rotates 90 Deg"/>
+                           </tooltip>
+                           <VBox.margin>
+                              <Insets left="10.0" top="20.0" />
+                           </VBox.margin>
+                        </Button>
+                        <ToggleButton fx:id="selectButton" mnemonicParsing="false" onAction="#SelectCanvas" prefHeight="26.0" prefWidth="70.0" text="Select">
+                           <tooltip>
+                              <Tooltip text="Click and drag"/>
+                           </tooltip>
+                           <VBox.margin>
+                              <Insets left="10.0" top="20.0" />
+                           </VBox.margin></ToggleButton>
+                        <ToggleButton fx:id="copyBtn" mnemonicParsing="false" onAction="#CopyPress" prefHeight="26.0" prefWidth="70.0" text="Copy">
+                           <tooltip>
+                              <Tooltip text="Click and drag"/>
+                           </tooltip>
+                           <VBox.margin>
+                              <Insets left="10.0" top="20.0" />
+                           </VBox.margin></ToggleButton>
+                        <ToggleButton fx:id="pasteBtn" mnemonicParsing="false" onAction="#PastePress" prefHeight="26.0" prefWidth="70.0" text="Paste">
+                           <tooltip>
+                              <Tooltip text="Click"/>
+                           </tooltip>
+                           <VBox.margin>
+                              <Insets left="10.0" top="20.0" />
+                           </VBox.margin></ToggleButton>
+                     </children>
+                  </VBox>
+               </content>
+            </TitledPane>
+            <TitledPane animated="false" text="Shape Control">
+               <content>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Button fx:id="redo" mnemonicParsing="false" onAction="#redoBtn" text="Redo" translateX="48.0" translateY="26.0" />
+                        <Button fx:id="undo" mnemonicParsing="false" onAction="#undoBtn" text="Undo" translateX="-5.0" />
+                              <ColorPicker fx:id="pencilColor" prefHeight="29.0" prefWidth="88.0">
+                           <VBox.margin>
+                              <Insets top="50.0" />
+                           </VBox.margin>
+                        </ColorPicker>
+                              <Slider fx:id="mySlide" blockIncrement=".5" majorTickUnit="5.0" max="10" min="0" minorTickCount="2" prefHeight="51.0" prefWidth="88.0" showTickLabels="true" showTickMarks="true" value="1">
+                           <VBox.margin>
+                              <Insets top="30.0" />
+                           </VBox.margin>
+                        </Slider>
+                        <ToggleButton fx:id="eraseBtn" mnemonicParsing="false" onAction="#erase" prefHeight="40.0" prefWidth="80.0" text="Eraser">
+                           <tooltip>
+                              <Tooltip text="Click and drag"/>
+                           </tooltip>
+                           <VBox.margin>
+                              <Insets left="5.0" top="25.0" />
+                           </VBox.margin></ToggleButton>
+                        <Button mnemonicParsing="false" onAction="#GrabColor" prefHeight="40.0" prefWidth="80.0" text="Color Grab">
+                           <tooltip>
+                              <Tooltip text="Click"/>
+                           </tooltip>
+                           <VBox.margin>
+                              <Insets left="5.0" top="2.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="clearBtn" mnemonicParsing="false" onAction="#CanvasClear" prefHeight="40.0" prefWidth="80.0" text="Clear">
+                           <tooltip>
+                              <Tooltip text="Click"/>
+                           </tooltip>
+                           <VBox.margin>
+                              <Insets left="5.0" top="2.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+               </content>
+            </TitledPane>
+                <TitledPane animated="false" prefHeight="347.0" prefWidth="110.0" text="Line">
+               <content>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <ToggleButton fx:id="drawButton" mnemonicParsing="false" onAction="#draw" prefHeight="70.0" prefWidth="70.0" styleClass="curve">
+                           <tooltip>
+                              <Tooltip text="Click and drag"/>
+                           </tooltip>
+                           <VBox.margin>
+                              <Insets left="10.0" right="10.0" top="75.0" />
+                           </VBox.margin>
+                        </ToggleButton>
+                        <ToggleButton fx:id="drawButton1" styleClass="curve-dash" mnemonicParsing="false" onAction="#draw1" prefHeight="70.0" prefWidth="70.0">
+                           <tooltip>
+                              <Tooltip text="Click and drag"/>
+                           </tooltip>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" />
+                           </VBox.margin>
+                        </ToggleButton>
+                        <ToggleButton fx:id="lineBtn" styleClass="straight" mnemonicParsing="false" onAction="#lineBtnPress" prefHeight="70.0" prefWidth="70.0">
+                           <tooltip>
+                              <Tooltip text="Click and drag"/>
+                           </tooltip>
+                           <VBox.margin>
+                              <Insets left="10.0" top="50.0" />
+                           </VBox.margin>
+                        </ToggleButton>
+                        <ToggleButton fx:id="lineBtn1" styleClass="straight-dash" mnemonicParsing="false" onAction="#lineBtnPress1" prefHeight="70.0" prefWidth="70.0">
+                           <tooltip>
+                              <Tooltip text="Click and drag"/>
+                           </tooltip>
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </ToggleButton>
+                     </children>
+                  </VBox>
+               </content>
+                </TitledPane>
+            <TitledPane animated="false" text="Square">
+               <content>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <ToggleButton fx:id="squareBtn" styleClass="square" mnemonicParsing="false" onAction="#squareBtnPress" prefHeight="70.0" prefWidth="70.0">
+                           <tooltip>
+                              <Tooltip text="Click and drag"/>
+                           </tooltip>
+                           <VBox.margin>
+                              <Insets left="10.0" top="150.0" />
+                           </VBox.margin>
+                        </ToggleButton>
+                        <ToggleButton fx:id="squareBtn1" styleClass="square-dash" mnemonicParsing="false" onAction="#squareBtnPress1" prefHeight="70.0" prefWidth="70.0">
+                           <tooltip>
+                              <Tooltip text="Click and drag"/>
+                           </tooltip>
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </ToggleButton>
+                     </children>
+                  </VBox>
+               </content>
+            </TitledPane>
+            <TitledPane animated="false" text="Rectangle">
+               <content>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <ToggleButton fx:id="rectBtn" styleClass="rect" mnemonicParsing="false" onAction="#rectBtnPress" prefHeight="70.0" prefWidth="70.0">
+                           <tooltip>
+                              <Tooltip text="Click and drag"/>
+                           </tooltip>
+                           <VBox.margin>
+                              <Insets left="10.0" top="150.0" />
+                           </VBox.margin>
+                        </ToggleButton>
+                        <ToggleButton fx:id="rectBtn1" styleClass="rect-dash" mnemonicParsing="false" onAction="#rectBtnPress1" prefHeight="70.0" prefWidth="70.0">
+                           <tooltip>
+                              <Tooltip text="Click and drag"/>
+                           </tooltip>
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </ToggleButton>
+                     </children>
+                  </VBox>
+               </content>
+            </TitledPane>
+            <TitledPane animated="false" text="Circle">
+               <content>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <ToggleButton fx:id="circleBtn" styleClass="circle" mnemonicParsing="false" onAction="#circleBtnPress" prefHeight="70.0" prefWidth="70.0">
+                           <tooltip>
+                              <Tooltip text="Click and drag"/>
+                           </tooltip>
+                           <VBox.margin>
+                              <Insets left="10.0" top="150.0" />
+                           </VBox.margin>
+                        </ToggleButton>
+                        <ToggleButton fx:id="circleBtn1" styleClass="circle-dash" mnemonicParsing="false" onAction="#circleBtnPress1" prefHeight="70.0" prefWidth="70.0">
+                           <tooltip>
+                              <Tooltip text="Click and drag"/>
+                           </tooltip>
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </ToggleButton>
+                     </children>
+                  </VBox>
+               </content>
+            </TitledPane>
+            <TitledPane animated="false" text="Ellipse">
+               <content>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <ToggleButton fx:id="ellBtn" styleClass="ellipse" mnemonicParsing="false" onAction="#ellBtnPress" prefHeight="70.0" prefWidth="70.0">
+                           <tooltip>
+                              <Tooltip text="Click and drag"/>
+                           </tooltip>
+                           <VBox.margin>
+                              <Insets left="10.0" top="150.0" />
+                           </VBox.margin>
+                        </ToggleButton>
+                        <ToggleButton fx:id="ellBtn1" styleClass="ellipse-dash" mnemonicParsing="false" onAction="#ellBtnPress1" prefHeight="70.0" prefWidth="70.0">
+                           <tooltip>
+                              <Tooltip text="Click and drag"/>
+                           </tooltip>
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </ToggleButton>
+                     </children>
+                  </VBox>
+               </content>
+            </TitledPane>
+            <TitledPane animated="false" text="Triangle">
+               <content>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <ToggleButton fx:id="triBtn" styleClass="triangle" mnemonicParsing="false" onAction="#triBtnPress" prefHeight="70.0" prefWidth="70.0">
+                           <tooltip>
+                              <Tooltip text="Click and drag"/>
+                           </tooltip>
+                           <VBox.margin>
+                              <Insets left="10.0" top="150.0" />
+                           </VBox.margin>
+                        </ToggleButton>
+                        <ToggleButton fx:id="triBtn1" styleClass="triangle-dash" mnemonicParsing="false" onAction="#triBtnPress1" prefHeight="70.0" prefWidth="70.0">
+                           <tooltip>
+                              <Tooltip text="Click and drag"/>
+                           </tooltip>
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </ToggleButton>
+                     </children>
+                  </VBox>
+               </content>
+            </TitledPane>
+            <TitledPane animated="false" text="Round Square">
+               <content>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <ToggleButton fx:id="diamond" styleClass="rounded" mnemonicParsing="false" onAction="#diamondBtn" prefHeight="70.0" prefWidth="70.0">
+                           <tooltip>
+                              <Tooltip text="Click and drag"/>
+                           </tooltip>
+                           <VBox.margin>
+                              <Insets left="10.0" top="100.0" />
+                           </VBox.margin>
+                        </ToggleButton>
+                        <ToggleButton fx:id="diamond1" styleClass="rounded-dash" mnemonicParsing="false" onAction="#diamondBtn1" prefHeight="70.0" prefWidth="70.0">
+                           <tooltip>
+                              <Tooltip text="Click and drag"/>
+                           </tooltip>
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </ToggleButton>
+                     </children>
+                  </VBox>
+               </content>
+            </TitledPane>
+            <TitledPane animated="false" text="Polygon">
+               <content>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label text="Enter a Number:">
+                           <VBox.margin>
+                              <Insets top="60.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextField fx:id="numField">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </TextField>
+                        <ToggleButton fx:id="polygon" styleClass="polygon" mnemonicParsing="false" onAction="#polyBtn" prefHeight="70.0" prefWidth="70.0">
+                           <tooltip>
+                              <Tooltip text="Click and drag"/>
+                           </tooltip>
+                           <VBox.margin>
+                              <Insets left="10.0" top="50.0" />
+                           </VBox.margin>
+                        </ToggleButton>
+                        <ToggleButton fx:id="polygon1" styleClass="polygon-dash" mnemonicParsing="false" onAction="#polyBtn1" prefHeight="70.0" prefWidth="70.0">
+                           <tooltip>
+                              <Tooltip text="Click and drag"/>
+                           </tooltip>
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </ToggleButton>
+                     </children>
+                  </VBox>
+               </content>
+            </TitledPane>
+            <TitledPane animated="false" text="Text">
+               <content>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label prefHeight="18.0" prefWidth="59.0" text="Enter Text:">
+                           <VBox.margin>
+                              <Insets left="15.0" top="100.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextField fx:id="textField">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </TextField>
+                        <ToggleButton fx:id="textButton" mnemonicParsing="false" onAction="#txtBtn" prefHeight="26.0" prefWidth="70.0" text="Add Text">
+                           <tooltip>
+                              <Tooltip text="Click for Text"/>
+                           </tooltip>
+                           <VBox.margin>
+                              <Insets left="7.0" top="40.0" />
+                           </VBox.margin>
+                        </ToggleButton>
+                     </children>
+                  </VBox>
+               </content>
+            </TitledPane>
+            </panes>
+        </Accordion>
+      <TabPane fx:id="tabPane" layoutX="1.0" layoutY="25.0" prefHeight="674.0" prefWidth="1014.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.rightAnchor="106.0" AnchorPane.topAnchor="25.0" />
+      <Button layoutX="438.0" layoutY="25.0" minWidth="29.0" mnemonicParsing="false" onAction="#closeTab" prefHeight="28.0" prefWidth="56.0" text="Delete" AnchorPane.rightAnchor="106.0" />
+      <Button layoutX="384.0" layoutY="25.0" minWidth="29.0" mnemonicParsing="false" onAction="#addTab" prefHeight="28.0" prefWidth="54.0" text="Add" AnchorPane.rightAnchor="162.0" />
+          <ImageView fx:id="imageFrame" fitHeight="1" fitWidth="1" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="tmrLbl" text="Autosave 0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="5.0" />
+    </children>
+</AnchorPane>

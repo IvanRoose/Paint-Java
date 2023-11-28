@@ -1,0 +1,72 @@
+.curve {
+    -fx-background-image: url("curve.png");
+    -fx-background-size: contain;
+}
+.curve-dash {
+    -fx-background-image: url("curved.png");
+    -fx-background-size: contain;
+}
+.straight {
+    -fx-background-image: url("line.jpg");
+    -fx-background-size: contain;
+}
+.straight-dash {
+    -fx-background-image: url("lined.png");
+    -fx-background-size: contain;
+}
+.square {
+    -fx-background-image: url("square.png");
+    -fx-background-size: contain;
+}
+.square-dash {
+    -fx-background-image: url("squared.png");
+    -fx-background-size: contain;
+}
+.rect {
+    -fx-background-image: url("rect.png");
+    -fx-background-size: contain;
+}
+.rect-dash {
+    -fx-background-image: url("rectd.png");
+    -fx-background-size: contain;
+}
+.circle {
+    -fx-background-image: url("circle.png");
+    -fx-background-size: contain;
+}
+.circle-dash {
+    -fx-background-image: url("circled.png");
+    -fx-background-size: contain;
+}
+.ellipse {
+    -fx-background-image: url("ell.png");
+    -fx-background-size: contain;
+}
+.ellipse-dash {
+    -fx-background-image: url("elld.png");
+    -fx-background-size: contain;
+}
+.triangle {
+    -fx-background-image: url("tri.png");
+    -fx-background-size: contain;
+}
+.triangle-dash {
+    -fx-background-image: url("trid.png");
+    -fx-background-size: contain;
+}
+.rounded {
+    -fx-background-image: url("rnd.png");
+    -fx-background-size: contain;
+}
+.rounded-dash {
+    -fx-background-image: url("rndd.png");
+    -fx-background-size: contain;
+}
+.polygon {
+    -fx-background-image: url("poly.png");
+    -fx-background-size: contain;
+}
+.polygon-dash {
+    -fx-background-image: url("polyd.png");
+    -fx-background-size: contain;
+}
